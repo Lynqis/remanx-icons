@@ -5,6 +5,12 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "strict": true,
+    "paths": {
+      "icons": [
+        "./dist/icons"
+      ],
+      "@remanx/icons/*": ["./projects/icons/*"]
+    },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
