@@ -1,4 +1,8 @@
+import path from "path";
+import fs from 'fs';
+
 const OUTPUT_CSS = "./assets/icons.css";
+const ICONS_FOLDER = "../raw-svg";
 
 export function buildCss(files) {
   let cssContent = `@layer rx-icons {

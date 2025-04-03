@@ -1,4 +1,8 @@
+import path from "path";
+import fs from 'fs';
+
 const OUTPUT_JSON = "./assets/icons.json";
+const ICONS_FOLDER = "../raw-svg";
 
 export function buildJson(files) {
   if (files.length === 0) {

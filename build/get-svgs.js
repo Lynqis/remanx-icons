@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from 'fs';
 
 const ICONS_FOLDER = "./raw-svg";
 

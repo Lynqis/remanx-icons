@@ -7,5 +7,9 @@
   "private": true,
   "devDependencies": {
     "svgo": "^3.3.2"
+  },
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.4.1"
   }
 }
