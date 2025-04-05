@@ -7,34 +7,39 @@ import chalk from 'chalk';
 
 const files = getSvgFiles();
 
-// Afficher un message d'introduction
-console.log(chalk.bold.cyan('🌟 Traitement des fichiers SVG en cours... 🌟'));
-console.log(chalk.yellow(`Nombre de fichiers SVG trouvés : ${files.length}`));
+// Display an introduction message
+console.log(chalk.bold.cyan('🌟 Processing SVG files... 🌟'));
+console.log(chalk.yellow(`Number of SVG files found: ${files.length}`));
 
-// Optimisation des fichiers SVG
-console.log(chalk.blue('\nOptimisation des fichiers SVG...'));
-optimizeSvg(files)
+// Optimize SVG files
+console.log(chalk.blue('\nOptimizing SVG files...'));
+const a = optimizeSvg(files)
   .then(() => {
-    console.log(chalk.green('✅ Optimisation terminée avec succès!'));
+    console.log(chalk.green('✅ Optimization completed successfully!'));
   })
   .catch((error) => {
-    console.error(chalk.red('❌ Erreur lors de l\'optimisation des SVG:', error));
+    console.error(chalk.red('❌ Error during SVG optimization:', error));
   });
 
-// Construction des fichiers CSS et JSON
-console.log(chalk.blue('\nGénération des fichiers CSS et JSON...'));
-try {
-  buildCss(files);
-  console.log(chalk.green('✅ CSS généré avec succès!'));
-} catch (error) {
-  console.error(chalk.red('❌ Erreur lors de la génération du CSS:', error));
-}
+// Generate CSS and JSON files
+console.log(chalk.blue('\nGenerating CSS and JSON files...'));
+const b = buildCss(files)
+  .then(() => {
+    console.log(chalk.green('✅ CSS generated successfully!'));
+  })
+  .catch((error) => {
+    console.error(chalk.red('❌ Error generating CSS:', error));
+  });
 
-try {
-  buildJson(files);
-  console.log(chalk.green('✅ JSON généré avec succès!'));
-} catch (error) {
-  console.error(chalk.red('❌ Erreur lors de la génération du JSON:', error));
-}
+const c = buildJson(files)
+  .then(() => {
+    console.log(chalk.green('✅ JSON generated successfully!'));
+  })
+  .catch((error) => {
+    console.error(chalk.red('❌ Error generating JSON:', error));
+  });
 
-console.log(chalk.bold.cyan('\n🎉 Processus terminé avec succès! 🎉'));
+Promise.all([a, b, c])
+  .then(() => {
+    console.log(chalk.bold.cyan('\n🎉 Process completed successfully! 🎉'));
+  });
