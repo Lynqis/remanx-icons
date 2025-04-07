@@ -7,7 +7,6 @@
   "scripts": {
     "build:icons": "node ./build/generate.js"
   },
-  "private": true,
   "devDependencies": {
     "svgo": "^3.3.2"
   },
