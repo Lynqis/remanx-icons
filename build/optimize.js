@@ -10,7 +10,6 @@ export function optimizeSvg(files) {
       files.forEach(file => {
         const filePath = path.join(IN_DIR, file);
 
-        // Vérification que le fichier existe avant de tenter de le lire
         if (!fs.existsSync(filePath)) {
           return reject(`Le fichier ${filePath} n'existe pas.`);
         }
@@ -24,7 +23,7 @@ export function optimizeSvg(files) {
           .catch(err => reject(`Erreur d'optimisation pour le fichier ${file}: ${err}`));
       });
 
-      resolve();  // Indiquer que tout est terminé correctement.
+      resolve();
     } catch (error) {
       reject(`Erreur lors du traitement des fichiers SVG: ${error}`);
     }

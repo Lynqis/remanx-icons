@@ -1,5 +1,5 @@
 {
-  "name": "@dexarys/remanx-icons",
+  "name": "remanx-icons",
   "version": "0.0.1",
   "publishConfig": {
     "@dexarys:registry": "https://npm.pkg.github.com/"

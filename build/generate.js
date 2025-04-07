@@ -7,11 +7,9 @@ import chalk from 'chalk';
 
 const files = getSvgFiles();
 
-// Display an introduction message
 console.log(chalk.bold.cyan('🌟 Processing SVG files... 🌟'));
 console.log(chalk.yellow(`Number of SVG files found: ${files.length}`));
 
-// Optimize SVG files
 console.log(chalk.blue('\nOptimizing SVG files...'));
 const a = optimizeSvg(files)
   .then(() => {
@@ -21,7 +19,6 @@ const a = optimizeSvg(files)
     console.error(chalk.red('❌ Error during SVG optimization:', error));
   });
 
-// Generate CSS and JSON files
 console.log(chalk.blue('\nGenerating CSS and JSON files...'));
 const b = buildCss(files)
   .then(() => {
