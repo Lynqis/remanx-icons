@@ -1,6 +1,9 @@
 {
-  "name": "rxicons-icons",
-  "version": "0.0.0",
+  "name": "@dexarys/remanx-icons",
+  "version": "0.0.1",
+  "publishConfig": {
+    "@dexarys:registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build:icons": "node ./build/generate.js"
   },
