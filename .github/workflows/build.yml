@@ -1,4 +1,4 @@
-name: Build assets icons
+name: Build and Publish Icon Package
 
 on:
   push:
@@ -8,7 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    outputs:
+      version: ${{ steps.extract-version.outputs.version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -16,14 +17,25 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      - name: Build icons
         run: npm run build:icons
 
-      - name: Archive production artifacts
+      - name: Extract version
+        id: extract-version
+        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+
+      - name: Prepare dist for publish
+        run: |
+          mkdir dist-package
+          cp -r dist/* dist-package/
+          cp package.json dist-package/
+          cp README.md dist-package/
+
+      - name: Upload prepared package
         uses: actions/upload-artifact@v4
         with:
-          name: dist
-          path: dist
+          name: remanx-icon-package
+          path: dist-package
 
   publish-gpr:
     needs: build
@@ -31,9 +43,13 @@ jobs:
     permissions:
       packages: write
       contents: read
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Download package artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: remanx-icon-package
+          path: .
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -41,23 +57,7 @@ jobs:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
 
-      - name: Download built dist
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist
-
-      - name: Prepare dist-only package
-        run: |
-          mkdir publish-dir
-          cp -r dist/* publish-dir/
-          cp package.json publish-dir/
-          cp README.md publish-dir/
-
       - name: Publish to GitHub Packages
-        run: |
-          cd publish-dir
-          npm publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.APP_TOKEN }}
-
