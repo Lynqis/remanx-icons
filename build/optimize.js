@@ -1,43 +1,35 @@
 import { optimize } from 'svgo';
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const IN_DIR = path.resolve(new URL(import.meta.url).pathname, '../../raw-svg');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const IN_DIR = path.resolve(__dirname, '../raw-svg');
+const OUTPUT_SVG = './dist/svg';
 
-export function optimizeSvg(files) {
-  return new Promise((resolve, reject) => {
-    try {
-      files.forEach(file => {
-        const filePath = path.join(IN_DIR, file);
+export async function optimizeSvg(files) {
+  try {
+    for (const file of files) {
+      const filePath = path.join(IN_DIR, file);
 
-        if (!fs.existsSync(filePath)) {
-          return reject(`Le fichier ${filePath} n'existe pas.`);
-        }
-
-        const svg = fs.readFileSync(filePath);
-
-        svgo(svg)
-          .then((optimizedSvg) => {
-            fs.writeFileSync(filePath, optimizedSvg);
-          })
-          .catch(err => reject(`Erreur d'optimisation pour le fichier ${file}: ${err}`));
-      });
-
-      resolve();
-    } catch (error) {
-      reject(`Erreur lors du traitement des fichiers SVG: ${error}`);
-    }
-  });
-}
-
-function svgo(svg) {
-  return new Promise((resolve, reject) => {
-    optimize(svg, ({ data }) => {
-      if (data) {
-        resolve(data);
-      } else {
-        reject('Erreur lors de l\'optimisation SVG');
+      try {
+        await fs.access(filePath);
+      } catch {
+        throw new Error(`❌ Le fichier ${filePath} n'existe pas.`);
       }
-    });
-  });
+
+      const svg = await fs.readFile(filePath, 'utf8');
+
+      const { data: optimizedSvg } = optimize(svg);
+
+      await fs.writeFile(filePath, optimizedSvg);
+    }
+
+    await fs.cp(IN_DIR, OUTPUT_SVG, { recursive: true });
+
+    console.log("✅ All files have been optimized and copied.");
+  } catch (error) {
+    console.error(`❌ Erreur : ${error}`);
+    throw error;
+  }
 }

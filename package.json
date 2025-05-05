@@ -1,9 +1,12 @@
 {
   "name": "@dexarys/remanx-icons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build:icons": "node ./build/generate.js"
   },
@@ -13,5 +16,9 @@
   "type": "module",
   "dependencies": {
     "chalk": "^5.4.1"
+  },
+  "exports": {
+    "./icons.css": "./dist/icons.css",
+    "./icons.json": "./dist/icons.json"
   }
 }

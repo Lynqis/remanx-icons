@@ -2,9 +2,13 @@ import { getSvgFiles } from './get-svgs.js';
 import { optimizeSvg } from './optimize.js';
 import { buildCss } from './build-css.js';
 import { buildJson } from './build-json.js';
+import fs from 'fs';
 
 import chalk from 'chalk';
 
+fs.mkdir('./dist', () => {
+
+});
 const files = getSvgFiles();
 
 console.log(chalk.bold.cyan('🌟 Processing SVG files... 🌟'));

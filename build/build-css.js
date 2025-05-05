@@ -1,7 +1,7 @@
 import path from "path";
 import fs from 'fs';
 
-const OUTPUT_CSS = "./assets/icons.css";
+const OUTPUT_CSS = "./dist/icons.css";
 const ICONS_FOLDER = "../raw-svg";
 
 export function buildCss(files) {

@@ -1,7 +1,7 @@
 import path from "path";
 import fs from 'fs';
 
-const OUTPUT_JSON = "./assets/icons.json";
+const OUTPUT_JSON = "./dist/icons.json";
 const ICONS_FOLDER = "../raw-svg";
 
 export function buildJson(files) {
