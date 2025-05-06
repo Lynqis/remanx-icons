@@ -52,7 +52,6 @@ jobs:
 
       - name: Publish to GitHub Packages
         run: |
-          cd dist
           ls -la
           npm publish
         env:
