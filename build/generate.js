@@ -44,3 +44,8 @@ Promise.all([a, b, c])
   .then(() => {
     console.log(chalk.bold.cyan('\n🎉 Process completed successfully! 🎉'));
   });
+
+chalk.white('\n Copy files');
+fs.copyFile('./package.json', './dist/package.json', () => {});
+fs.copyFile('./README.md', './dist/README.md', () => {});
+chalk.green('\n Task completed!');

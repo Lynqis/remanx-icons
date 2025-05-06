@@ -24,18 +24,11 @@ jobs:
         id: extract-version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
 
-      - name: Prepare dist for publish
-        run: |
-          mkdir dist-package
-          cp -r dist/* dist-package/
-          cp package.json dist-package/
-          cp README.md dist-package/
-
       - name: Upload prepared package
         uses: actions/upload-artifact@v4
         with:
           name: remanx-icon-package
-          path: dist-package
+          path: dist
 
   publish-gpr:
     needs: build
@@ -58,6 +51,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/
 
       - name: Publish to GitHub Packages
-        run: npm publish
+        run: |
+          cd dist
+          ls -la
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.APP_TOKEN }}

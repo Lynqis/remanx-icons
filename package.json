@@ -1,11 +1,13 @@
 {
   "name": "@dexarys/remanx-icons",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "files": [
-    "dist"
+    "icons.css",
+    "icons.json",
+    "svg/"
   ],
   "scripts": {
     "build:icons": "node ./build/generate.js"
