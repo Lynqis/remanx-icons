@@ -2,7 +2,7 @@ import path from "path";
 import fs from 'fs';
 
 const OUTPUT_JSON = "./dist/icons.json";
-const ICONS_FOLDER = "../raw-svg";
+const ICONS_FOLDER = "./raw-svg";
 
 export function buildJson(files) {
   return new Promise((resolve, reject) => {
@@ -18,7 +18,7 @@ export function buildJson(files) {
 
       files.forEach(file => {
         const iconName = path.basename(file, ".svg");
-        iconsJson.icons[iconName] = `${ICONS_FOLDER}/${file}`;
+        iconsJson.icons[iconName] = fs.readFileSync(path.join(ICONS_FOLDER, file), 'utf8');
       });
 
       fs.writeFileSync(OUTPUT_JSON, JSON.stringify(iconsJson, null, 2));

@@ -15,7 +15,7 @@ console.log(chalk.bold.cyan('🌟 Processing SVG files... 🌟'));
 console.log(chalk.yellow(`Number of SVG files found: ${files.length}`));
 
 console.log(chalk.blue('\nOptimizing SVG files...'));
-const a = optimizeSvg(files)
+const a = await optimizeSvg(files)
   .then(() => {
     console.log(chalk.green('✅ Optimization completed successfully!'));
   })
