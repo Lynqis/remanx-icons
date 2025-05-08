@@ -1,6 +1,6 @@
 {
   "name": "@dexarys/remanx-icons",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -20,7 +20,7 @@
   "dependencies": {
   },
   "exports": {
-    "./icons.css": "./dist/icons.css",
-    "./icons.json": "./dist/icons.json"
+    "./icons.css": "./icons.css",
+    "./icons.json": "./icons.json"
   }
 }
