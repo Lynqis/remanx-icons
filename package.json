@@ -1,8 +1,9 @@
 {
-  "name": "@dexarys/remanx-icons",
+  "name": "@lynqis/remanx-icons",
   "version": "0.0.9",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
   },
   "files": [
     "icons.css",
