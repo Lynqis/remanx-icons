@@ -45,7 +45,7 @@ Promise.all([a, b, c])
     console.log(chalk.bold.cyan('\n🎉 Process completed successfully! 🎉'));
   });
 
-chalk.white('\n Copy files');
+console.log(chalk.white('\n Copy files'));
 fs.copyFile('./package.json', './dist/package.json', () => {});
 fs.copyFile('./README.md', './dist/README.md', () => {});
-chalk.green('\n Task completed!');
+console.log(chalk.green('\n Task completed!'));
