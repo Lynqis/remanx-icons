@@ -1,0 +1,59 @@
+## v0.2.0 - 2025-05-14
+- build: upgrade tagger
+- build: add tagger
+- build: change repository
+- feat: add version file
+- feat: add rx icons
+- fix: export file's path
+- feat: update json generated
+- ci: fix artifact's path
+- ci: better generation
+- fix: versionning
+- ci: fix generation
+- fix: versionning
+- ci: fix publish
+- fix: versionning
+- ci: fix artifact
+- ci: add artefact
+- feat: improve generation
+- ci: fix package
+- ci: fix package name
+- ci: fix package
+- ci: workflow to publish pacckage
+- feat: improve generation
+- feat: optimize svg
+- W.I.P: optimize build icons
+- feat: generate icons files
+- feat: remove angular
+- feat: initialisation
+- initial commit
+
+## v0.1.0 - 2025-05-14
+- build: add tagger
+- build: change repository
+- feat: add version file
+- feat: add rx icons
+- fix: export file's path
+- feat: update json generated
+- ci: fix artifact's path
+- ci: better generation
+- fix: versionning
+- ci: fix generation
+- fix: versionning
+- ci: fix publish
+- fix: versionning
+- ci: fix artifact
+- ci: add artefact
+- feat: improve generation
+- ci: fix package
+- ci: fix package name
+- ci: fix package
+- ci: workflow to publish pacckage
+- feat: improve generation
+- feat: optimize svg
+- W.I.P: optimize build icons
+- feat: generate icons files
+- feat: remove angular
+- feat: initialisation
+- initial commit
+
