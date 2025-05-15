@@ -1,3 +1,14 @@
+## v0.2.1 - 2025-05-15
+
+### 🐛 Fixes
+- remove dependencies
+
+### 🏗️ Build
+- proper installation
+
+### 🔧 CI/CD
+- update trigger
+
 ## v0.2.0 - 2025-05-14
 - build: upgrade tagger
 - build: add tagger
