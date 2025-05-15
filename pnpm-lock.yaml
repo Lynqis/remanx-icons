@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@dexarys/tagger':
-        specifier: ^0.4.0
-        version: 0.4.0
       chalk:
         specifier: ^5.4.1
         version: 5.4.1
@@ -19,10 +16,6 @@ importers:
         version: 3.3.2
 
 packages:
-
-  '@dexarys/tagger@0.4.0':
-    resolution: {integrity: sha512-jQEkX0MeEG0wt5l3YRHbBM2ehI8cSWP9KuE3RiZIf9p5N6hQhP+mEZ4fEJuwUBPGl0c1QV3+LdpLFHIBtQbCgw==, tarball: https://npm.pkg.github.com/download/@dexarys/tagger/0.4.0/76fcb4b3354a4f13645c7799eaea3108c231a5bd}
-    hasBin: true
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -97,8 +90,6 @@ packages:
     hasBin: true
 
 snapshots:
-
-  '@dexarys/tagger@0.4.0': {}
 
   '@trysound/sax@0.2.0': {}
 
