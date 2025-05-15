@@ -1,70 +1,47 @@
-## v0.2.1 - 2025-05-15
+## v0.1.0 - 2025-05-15
+
+### ✨ Features
+- add version file
+- add rx icons
+- update json generated
+- improve generation
+- improve generation
+- optimize svg
+- generate icons files
+- remove angular
+- initialisation
 
 ### 🐛 Fixes
 - remove dependencies
+- export file's path
+- versionning
+- versionning
+- versionning
+
+### 🧹 Chores
+- v0.2.1
+- v0.2.0
 
 ### 🏗️ Build
 - proper installation
+- upgrade tagger
+- add tagger
+- change repository
 
 ### 🔧 CI/CD
 - update trigger
+- fix artifact's path
+- better generation
+- fix generation
+- fix publish
+- fix artifact
+- add artefact
+- fix package
+- fix package name
+- fix package
+- workflow to publish pacckage
 
-## v0.2.0 - 2025-05-14
-- build: upgrade tagger
-- build: add tagger
-- build: change repository
-- feat: add version file
-- feat: add rx icons
-- fix: export file's path
-- feat: update json generated
-- ci: fix artifact's path
-- ci: better generation
-- fix: versionning
-- ci: fix generation
-- fix: versionning
-- ci: fix publish
-- fix: versionning
-- ci: fix artifact
-- ci: add artefact
-- feat: improve generation
-- ci: fix package
-- ci: fix package name
-- ci: fix package
-- ci: workflow to publish pacckage
-- feat: improve generation
-- feat: optimize svg
+### 📦 Others
 - W.I.P: optimize build icons
-- feat: generate icons files
-- feat: remove angular
-- feat: initialisation
-- initial commit
-
-## v0.1.0 - 2025-05-14
-- build: add tagger
-- build: change repository
-- feat: add version file
-- feat: add rx icons
-- fix: export file's path
-- feat: update json generated
-- ci: fix artifact's path
-- ci: better generation
-- fix: versionning
-- ci: fix generation
-- fix: versionning
-- ci: fix publish
-- fix: versionning
-- ci: fix artifact
-- ci: add artefact
-- feat: improve generation
-- ci: fix package
-- ci: fix package name
-- ci: fix package
-- ci: workflow to publish pacckage
-- feat: improve generation
-- feat: optimize svg
-- W.I.P: optimize build icons
-- feat: generate icons files
-- feat: remove angular
-- feat: initialisation
 - initial commit
 
