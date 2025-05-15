@@ -1,3 +1,8 @@
+## v0.1.1 - 2025-05-15
+
+### 🐛 Fixes
+- install dependencies in build
+
 ## v0.1.0 - 2025-05-15
 
 ### ✨ Features
