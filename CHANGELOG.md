@@ -1,3 +1,12 @@
+## v0.2.0 - 2025-05-20
+
+### ✨ Features
+- new icons + optimize
+- update gear icon
+
+### 🐛 Fixes
+- icons viewBox
+
 ## v0.1.2 - 2025-05-19
 
 ### 🐛 Fixes
