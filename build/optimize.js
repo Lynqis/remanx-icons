@@ -7,6 +7,21 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const IN_DIR = path.resolve(__dirname, '../raw-svg');
 const OUTPUT_SVG = './dist/svg';
 
+const svgoConfig = {
+  plugins: [
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          removeViewBox: false,
+        },
+      },
+    },
+    'removeDimensions',
+    'convertPathData',
+  ],
+};
+
 export async function optimizeSvg(files) {
   try {
     for (const file of files) {
@@ -20,7 +35,10 @@ export async function optimizeSvg(files) {
 
       const svg = await fs.readFile(filePath, 'utf8');
 
-      const { data: optimizedSvg } = optimize(svg);
+      const { data: optimizedSvg } = optimize(svg, {
+        path: filePath,
+        ...svgoConfig,
+      });
 
       await fs.writeFile(filePath, optimizedSvg);
     }
