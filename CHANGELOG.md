@@ -1,3 +1,8 @@
+## v0.3.1 - 2025-05-21
+
+### 🐛 Fixes
+- size of new icons
+
 ## v0.3.0 - 2025-05-20
 
 ### ✨ Features
