@@ -9,6 +9,14 @@ const OUTPUT_SVG = './dist/svg';
 
 const SVGO_CONFIG = {
   plugins: [
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          removeViewBox: false,
+        }
+      }
+    },
     'convertStyleToAttrs',
     'removeScriptElement',
     'removeUnknownsAndDefaults',
