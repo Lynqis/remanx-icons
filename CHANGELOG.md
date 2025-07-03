@@ -1,3 +1,13 @@
+## v0.4.0 - 2025-07-03
+
+### ✨ Features
+- add (clipboard, envelope, external-link) icons
+- add more icons (backspace, bell, calendar, bookmark)
+- add download icon
+
+### 🐛 Fixes
+- optimize
+
 ## v0.3.6 - 2025-05-22
 
 ### 🐛 Fixes
